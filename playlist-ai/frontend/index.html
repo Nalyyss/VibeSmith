@@ -1,23 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VibeSmith – AI Playlist Generator</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VibeSmith</title>
+
+  <!-- Font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>VibeSmith</h1>
-    <p>Create a playlist based on your mood 🎧</p>
+  <div class="background-overlay"></div>
 
-    <form id="playlist-form">
-      <input type="text" id="mood-input" placeholder="Type your mood (e.g., chill, happy)" required />
-      <button type="submit">Generate Playlist</button>
-    </form>
+  <div class="app-container">
+    <header class="header">
+      <h1><span class="logo-icon">🎶</span> <span class="highlight">Vibe</span>Smith</h1>
+      <p>Znajdź idealną muzykę do swojego nastroju</p>
+    </header>
 
-    <div id="loading" class="loading" style="display: none;">Generating playlist...</div>
-    <div id="playlist-result" class="playlist-box"></div>
+    <main class="container">
+      <div class="form-group">
+        <label>Nastrój:</label>
+        <select>
+          <option disabled selected>-- Mood --</option>
+          <option>Happy</option>
+          <option>Sad</option>
+          <option>Energetic</option>
+          <option>Chill</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Aktywność:</label>
+        <select>
+          <option disabled selected>-- Activity --</option>
+          <option>Driving</option>
+          <option>Studying</option>
+          <option>Workout</option>
+          <option>Relax</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Era muzyczna:</label>
+        <select>
+          <option disabled selected>-- Era --</option>
+          <option>2000s</option>
+          <option>2010s</option>
+          <option>2020s</option>
+        </select>
+      </div>
+
+      <button class="generate-btn">🎧 Wygeneruj playlistę</button>
+    </main>
+
+    <!-- Sekcja slidera -->
+    <section class="carousel-section">
+      <h3>📚 Przykładowe playlisty</h3>
+      <button class="carousel-arrow left">&#10094;</button>
+      <button class="carousel-arrow right">&#10095;</button>
+
+      <div class="carousel" id="carousel">
+        <div class="card animated">
+          <img src="https://i.scdn.co/image/ab67616d00001e020f6f1ce4c86d1cfddc841b41" alt="Happy">
+          <h4>Happy</h4>
+          <p>Feel good hit by Pharrell Williams.</p>
+        </div>
+        <div class="card animated">
+          <img src="https://i.scdn.co/image/ab67616d00001e0279c07fc3a1e8da227ce8b4c0" alt="Can't Stop the Feeling">
+          <h4>Can't Stop the Feeling!</h4>
+          <p>Dance hit by Justin Timberlake.</p>
+        </div>
+        <div class="card animated">
+          <img src="https://i.scdn.co/image/ab67616d00001e021ad57cf7a418d700fbc3f0c9" alt="Best Day">
+          <h4>Best Day</h4>
+          <p>Optimistic vibes by American Authors.</p>
+        </div>
+      </div>
+    </section>
   </div>
 
   <script src="script.js"></script>
